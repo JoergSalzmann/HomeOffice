@@ -22,7 +22,7 @@ namespace HomeOffice
 
             //Titel und Version
             Version v = Assembly.GetExecutingAssembly().GetName().Version;
-            Text = "HomeOffice " + v.Major + "." + v.Minor;// + " RC 1";
+            Text = "HomeOffice " + v.Major + "." + v.Minor + " preview 1";// + " RC 1";
             Icon = Properties.Resources.Home;
 
             //Model und Controller initialisieren
