@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29920.165
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeOffice", "HomeOffice\HomeOffice.csproj", "{80D82F97-4BE9-4315-9C8D-DA96079EAEA8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeOffice", "HomeOffice\HomeOffice.csproj", "{9A1E2375-BEB4-4A71-BFDD-D90D532E1323}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{80D82F97-4BE9-4315-9C8D-DA96079EAEA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{80D82F97-4BE9-4315-9C8D-DA96079EAEA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{80D82F97-4BE9-4315-9C8D-DA96079EAEA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{80D82F97-4BE9-4315-9C8D-DA96079EAEA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A1E2375-BEB4-4A71-BFDD-D90D532E1323}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A1E2375-BEB4-4A71-BFDD-D90D532E1323}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A1E2375-BEB4-4A71-BFDD-D90D532E1323}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A1E2375-BEB4-4A71-BFDD-D90D532E1323}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
