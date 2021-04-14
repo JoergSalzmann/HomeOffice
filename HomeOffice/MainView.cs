@@ -36,7 +36,7 @@ namespace HomeOffice
             rbSettings.Click += (s, ea) => { if (new SettingsView().ShowDialog() == DialogResult.OK) controller.ResetState(); };
 
             //Info zur Anwendung
-            rbInfo.Click += (s, ea) => { MessageBox.Show(Text + "\n\nVerwendet: WakeOnLan 2.1\n\n\n© 2020-2021 - J. Salzmann", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information); };
+            rbInfo.Click += (s, ea) => { MessageBox.Show(Text + "\n\nVerwendet: WakeOnLan 2.2-beta\n\n\n© 2020-2021 - J. Salzmann", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information); };
 
             //Cursor
             controller.ChangeCursor += (s, ea) => { Invoke(new MethodInvoker(delegate { Cursor = ea.Value ? Cursors.WaitCursor : Cursors.Default; })); };
