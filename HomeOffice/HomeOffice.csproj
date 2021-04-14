@@ -52,7 +52,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="WakeOnLan, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WakeOnLanCSM.2.2.0-beta\lib\netstandard2.0\WakeOnLan.dll</HintPath>
+      <HintPath>..\packages\WakeOnLanCSM.2.2.0-RC2\lib\netstandard2.0\WakeOnLan.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
