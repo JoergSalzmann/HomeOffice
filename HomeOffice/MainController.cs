@@ -230,7 +230,7 @@ namespace HomeOffice
                 //RDP-Verbindung aufbauen
                 if (string.IsNullOrEmpty(RdpName))
                     Process.Start("mstsc.exe", "/v:" + model.ComputerIpAddress + " /f");
-                else Process.Start(RdpName);
+                else new Process() { StartInfo = new ProcessStartInfo(RdpName) { UseShellExecute = true } }.Start();
 
                 //Evtl. Anwendung beenden
                 if (model.CloseAfterConnect)
