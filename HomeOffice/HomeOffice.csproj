@@ -13,7 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="RibbonWinForms" Version="5.1.0-beta" />
+    <PackageReference Include="Ribbon.Fork.NET5" Version="5.0.0-RC1" />
     <PackageReference Include="WakeOnLanCSM" Version="2.2.0-RC2" />
   </ItemGroup>
 
