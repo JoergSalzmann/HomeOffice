@@ -42,8 +42,8 @@ namespace HomeOffice
                 stringBuilder.AppendLine(Text);
                 stringBuilder.AppendLine();
                 stringBuilder.AppendLine("Verwendete Pakete:");
-                stringBuilder.AppendLine("- Ribbon.Fork.NET5  5.0-RC1");
-                stringBuilder.AppendLine("- WakeOnLanCSM  2.2-RC2");
+                stringBuilder.AppendLine("- Ribbon.Fork.NET5  5.0.4");
+                stringBuilder.AppendLine("- WakeOnLanCSM  2.2");
                 stringBuilder.AppendLine();
                 stringBuilder.AppendLine("© 2020-2021 - J. Salzmann");
                 MessageBox.Show(stringBuilder.ToString(), "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);

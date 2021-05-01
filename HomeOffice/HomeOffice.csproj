@@ -13,8 +13,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Ribbon.Fork.NET5" Version="5.0.0-RC1" />
-    <PackageReference Include="WakeOnLanCSM" Version="2.2.0-RC2" />
+    <PackageReference Include="Ribbon.Fork.NET5" Version="5.0.4" />
+    <PackageReference Include="WakeOnLanCSM" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>
