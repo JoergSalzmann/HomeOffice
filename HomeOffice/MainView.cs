@@ -45,7 +45,7 @@ namespace HomeOffice
                 stringBuilder.AppendLine("- Ribbon.Fork.NET5  5.0.4");
                 stringBuilder.AppendLine("- WakeOnLanCSM  2.2");
                 stringBuilder.AppendLine();
-                stringBuilder.AppendLine("© 2020-2021 - J. Salzmann");
+                stringBuilder.AppendLine("© 2020-2022 - J. Salzmann");
                 MessageBox.Show(stringBuilder.ToString(), "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             };
 
@@ -92,7 +92,7 @@ namespace HomeOffice
             rbWuConnect.Visible = false;
 
             //Neuen Button erstellen und hinzufügen
-            RibbonButton btn = new RibbonButton
+            var button = new RibbonButton
             {
                 Name = RdpName,
                 Text = RdpName.Split('.')[0],
@@ -102,10 +102,10 @@ namespace HomeOffice
             };
 
             //WakeUp and Connect für den aktuellen Buttons
-            btn.Click += (s, ea) => controller.WakeUpAndConnect(RdpName);
+            button.Click += (s, ea) => controller.WakeUpAndConnect(RdpName);
 
             //Button der Auflistung hinzufügen und neue Window-Breite berechnen
-            rpAutoJobs.Items.Add(btn);
+            rpAutoJobs.Items.Add(button);
         }
 
         private void RefreshState()

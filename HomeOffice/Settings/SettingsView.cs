@@ -42,7 +42,7 @@ namespace HomeOffice
 
             lkLabelOpenProgPath.LinkClicked += (s, ea) =>
               {
-                  try { controller.OpenProgrammPath(); }
+                  try { SettingsController.OpenProgrammPath(); }
                   catch (Exception ex) { MessageBox.Show("Das Programmverzeichniss konnte nicht geöffnet werden:\n\n" + ex.Message, "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
               };
         }

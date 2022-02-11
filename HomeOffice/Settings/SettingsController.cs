@@ -43,10 +43,13 @@ namespace HomeOffice
             Settings.Default.Save();
         }
 
-        public void OpenProgrammPath()
+        public static void OpenProgrammPath()
         {
-            DirectoryInfo di = new DirectoryInfo(Directory.GetCurrentDirectory());
-            Process.Start(di.FullName);
+            var di = new DirectoryInfo(Directory.GetCurrentDirectory());
+            using var process = new Process();
+            process.StartInfo.FileName = di.FullName;
+            process.StartInfo.UseShellExecute = true;
+            process.Start();
         }
     }
 }
