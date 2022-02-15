@@ -35,30 +35,28 @@ namespace HomeOffice
         {
             get
             {
-                switch (ServerState)
+                return ServerState switch
                 {
-                    case EServerState.Error: return Resources.Red.ToBitmap();
-                    case EServerState.Online: return Resources.Green.ToBitmap();
-                    case EServerState.Offline: return Resources.Yellow.ToBitmap();
-                    case EServerState.Connecting: return Resources.Blue.ToBitmap();
-                }
-
-                return Resources.Blue.ToBitmap();
+                    EServerState.Error => Resources.Red.ToBitmap(),
+                    EServerState.Online => Resources.Green.ToBitmap(),
+                    EServerState.Offline => Resources.Yellow.ToBitmap(),
+                    EServerState.Connecting => Resources.Blue.ToBitmap(),
+                    _ => Resources.Blue.ToBitmap(),
+                };
             }
         }
         public string ServerInfo
         {
             get
             {
-                switch (ServerState)
+                return ServerState switch
                 {
-                    case EServerState.Error: return "Überprüfen Sie die Server-Einstellungen";
-                    case EServerState.Online: return "Server ist Online";
-                    case EServerState.Offline: return "Server ist nicht erreichbar";
-                    case EServerState.Connecting: return "Verbinde mit Server";
-                }
-
-                return string.Empty;
+                    EServerState.Error => "Überprüfen Sie die Server-Einstellungen",
+                    EServerState.Online => "Server ist Online",
+                    EServerState.Offline => "Server ist nicht erreichbar",
+                    EServerState.Connecting => "Verbinde mit Server",
+                    _ => string.Empty,
+                };
             }
         }
 
@@ -73,44 +71,42 @@ namespace HomeOffice
         {
             get
             {
-                switch (ComputerState)
+                return ComputerState switch
                 {
-                    case EComputerState.Error: return Resources.Red.ToBitmap();
-                    case EComputerState.Online: return Resources.Green.ToBitmap();
-                    case EComputerState.Offline: return Resources.Yellow.ToBitmap();
-                    case EComputerState.Connecting: return Resources.Blue.ToBitmap();
-                    case EComputerState.WakeUp: return Resources.Wecker;
-                    case EComputerState.RdpStarted: return Resources.RemoteControl;
-                }
-
-                return Resources.Blue.ToBitmap();
+                    EComputerState.Error => Resources.Red.ToBitmap(),
+                    EComputerState.Online => Resources.Green.ToBitmap(),
+                    EComputerState.Offline => Resources.Yellow.ToBitmap(),
+                    EComputerState.Connecting => Resources.Blue.ToBitmap(),
+                    EComputerState.WakeUp => Resources.Wecker,
+                    EComputerState.RdpStarted => Resources.RemoteControl,
+                    _ => Resources.Blue.ToBitmap(),
+                };
             }
         }
         public string ComputerInfo
         {
             get
             {
-                switch (ComputerState)
+                return ComputerState switch
                 {
-                    case EComputerState.Error: return "Überprüfen Sie die Computer-Einstellungen";
-                    case EComputerState.Online: return "Computer ist Online";
-                    case EComputerState.Offline: return "Computer ist nicht erreichbar";
-                    case EComputerState.Connecting: return "Verbinde mit Computer";
-                    case EComputerState.WakeUp: return "Der Computer wurde aufgeweckt";
-                    case EComputerState.RdpStarted: return "Remote Desktop wurde gestartet";
-                }
-
-                return string.Empty;
+                    EComputerState.Error => "Überprüfen Sie die Computer-Einstellungen",
+                    EComputerState.Online => "Computer ist Online",
+                    EComputerState.Offline => "Computer ist nicht erreichbar",
+                    EComputerState.Connecting => "Verbinde mit Computer",
+                    EComputerState.WakeUp => "Der Computer wurde aufgeweckt",
+                    EComputerState.RdpStarted => "Remote Desktop wurde gestartet",
+                    _ => string.Empty,
+                };
             }
         }
 
-        public string ServerIpAddress { get { return Settings.Default.ServerIpAddress; } }
-        public int ServerPort { get { return Settings.Default.ServerPort; } }
-        public bool UseDefaultPort { get { return Settings.Default.UseDefaultPort; } }
-        public string ComputerIpAddress { get { return Settings.Default.ComputerIpAddress; } }
-        public string ComputerMacAddress { get { return Settings.Default.ComputerMacAddress; } }
-        public bool CloseAfterConnect { get { return Settings.Default.CloseAfterConnect; } }
-        public int DelayBeforeRdpConnect { get { return Settings.Default.DelayBeforeRdpConnect; } }
+        public static string ServerIpAddress { get { return Settings.Default.ServerIpAddress; } }
+        public static int ServerPort { get { return Settings.Default.ServerPort; } }
+        public static bool UseDefaultPort { get { return Settings.Default.UseDefaultPort; } }
+        public static string ComputerIpAddress { get { return Settings.Default.ComputerIpAddress; } }
+        public static string ComputerMacAddress { get { return Settings.Default.ComputerMacAddress; } }
+        public static bool CloseAfterConnect { get { return Settings.Default.CloseAfterConnect; } }
+        public static int DelayBeforeRdpConnect { get { return Settings.Default.DelayBeforeRdpConnect; } }
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(object PropertyName)

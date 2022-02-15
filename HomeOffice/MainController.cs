@@ -30,7 +30,7 @@ namespace HomeOffice
 
         private void InitMainThread()
         {
-            Thread th = new Thread(new ThreadStart(delegate
+            var thread = new Thread(new ThreadStart(delegate
             {
                 //Zum Start beide Stati auf Connection setzen
                 model.ServerState = MainModel.EServerState.Connecting;
@@ -47,23 +47,23 @@ namespace HomeOffice
             }));
 
             //Thread starten
-            th.Start();
+            thread.Start();
         }
 
-        public List<string> GetRdpButtons()
+        public static List<string> GetRdpButtons()
         {
-            List<string> li = new List<string>();
+            var buttons = new List<string>();
 
             try
             {
-                DirectoryInfo di = new DirectoryInfo(Directory.GetCurrentDirectory());
-                foreach (FileInfo fi in di.GetFiles())
-                    if (fi.Extension.ToLower().Contains("rdp"))
-                        li.Add(fi.Name);
+                var directory = new DirectoryInfo(Directory.GetCurrentDirectory());
+                foreach (var file in directory.GetFiles())
+                    if (file.Extension.ToLower().Contains("rdp"))
+                        buttons.Add(file.Name);
 
-                return li;
+                return buttons;
             }
-            catch { return li; }
+            catch { return buttons; }
         }
 
         private void CheckServerState()
@@ -71,7 +71,7 @@ namespace HomeOffice
             try
             {
                 //Durch Ping überprüfen, ob Server Online ist
-                PingReply pingReply = new Ping().Send(model.ServerIpAddress);
+                PingReply pingReply = new Ping().Send(MainModel.ServerIpAddress);
 
                 //Status dem entsprechend anpassen
                 if (pingReply.Status == IPStatus.Success)
@@ -103,14 +103,14 @@ namespace HomeOffice
             try
             {
                 //Computer-Status durch Ping ermitteln
-                PingReply pingReply = new Ping().Send(model.ComputerIpAddress);
+                PingReply pingReply = new Ping().Send(MainModel.ComputerIpAddress);
 
                 //Computer Online
                 if (pingReply.Status == IPStatus.Success)
                 {
                     //Wartezeit, wenn PC nach dem Aufwecken Online ist
                     if (model.ComputerState == MainModel.EComputerState.WakeUp)
-                        Thread.Sleep(model.DelayBeforeRdpConnect * 1000);
+                        Thread.Sleep(MainModel.DelayBeforeRdpConnect * 1000);
 
                     //Online-Status, wenn noch keine RDP-Verbindung aufgebaut
                     if (model.ComputerState != MainModel.EComputerState.RdpStarted)
@@ -212,9 +212,9 @@ namespace HomeOffice
 
         private bool WakeUpComputer(out string Result)
         {
-            if (model.UseDefaultPort)
-                return new WakeOnLan.Client().WakeUpByServer(model.ServerIpAddress, model.ComputerMacAddress, ProgramName, out Result);
-            else return new WakeOnLan.Client().WakeUpByServer(model.ServerIpAddress, model.ComputerMacAddress, ProgramName, model.ServerPort, out Result);
+            if (MainModel.UseDefaultPort)
+                return new WakeOnLan.Client().WakeUpByServer(MainModel.ServerIpAddress, MainModel.ComputerMacAddress, ProgramName, out Result);
+            else return new WakeOnLan.Client().WakeUpByServer(MainModel.ServerIpAddress, MainModel.ComputerMacAddress, ProgramName, MainModel.ServerPort, out Result);
         }
 
         private void ConnectRDP()
@@ -229,11 +229,11 @@ namespace HomeOffice
 
                 //RDP-Verbindung aufbauen
                 if (string.IsNullOrEmpty(RdpName))
-                    Process.Start("mstsc.exe", "/v:" + model.ComputerIpAddress + " /f");
+                    Process.Start("mstsc.exe", "/v:" + MainModel.ComputerIpAddress + " /f");
                 else new Process() { StartInfo = new ProcessStartInfo(RdpName) { UseShellExecute = true } }.Start();
 
                 //Evtl. Anwendung beenden
-                if (model.CloseAfterConnect)
+                if (MainModel.CloseAfterConnect)
                     OnCloseProgramm();
             }
             catch (Exception ex) { OnErrorMessage("Fehler beim Aufbauen der RDP-Verbindung: \n\n" + ex.Message); }

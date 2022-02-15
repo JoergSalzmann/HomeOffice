@@ -40,7 +40,7 @@ namespace HomeOffice
             {
                 var stringBuilder = new StringBuilder();
                 stringBuilder.AppendLine(Text);
-                stringBuilder.AppendLine();
+                stringBuilder.AppendLine(); 
                 stringBuilder.AppendLine("Verwendete Pakete:");
                 stringBuilder.AppendLine("- Ribbon.Fork.NET5  5.0.5");
                 stringBuilder.AppendLine("- WakeOnLanCSM  2.2");
@@ -63,7 +63,7 @@ namespace HomeOffice
             rbWuConnect.Click += (s, ea) => controller.WakeUpAndConnect();
 
             //Dynamische RDP-Buttons
-            AddRdpButtons(controller.GetRdpButtons());
+            AddRdpButtons(MainController.GetRdpButtons());
 
             //Aktualisierungen
             model.PropertyChanged += (s, ea) => { RefreshState(); };
