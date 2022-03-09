@@ -2,12 +2,12 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net5.0-windows</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
     <StartupObject>HomeOffice.Program</StartupObject>
     <ApplicationIcon>Icons\Home.ico</ApplicationIcon>
     <Authors>Jörg Salzmann</Authors>
-    <Version>1.4.0</Version>
+    <Version>1.5.0</Version>
     <RepositoryUrl>https://github.com/JoergSalzmann/HomeOffice</RepositoryUrl>
     <RepositoryType>Public</RepositoryType>
   </PropertyGroup>
