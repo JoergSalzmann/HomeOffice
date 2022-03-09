@@ -42,6 +42,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.nudDelayConnect = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,7 +53,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.gbServer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudServerPort)).BeginInit();
             this.gbComputer.SuspendLayout();
@@ -212,6 +212,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "RDP-Verbindungsaufbau";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(10, 60);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(216, 20);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "erfolgreichem Aufwecken:";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -313,18 +322,8 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Im Programmverzeichniss können diverse";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(10, 60);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(216, 20);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "erfolgreichem Aufwecken:";
-            // 
             // SettingsView
             // 
-            this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
@@ -336,7 +335,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.gbComputer);
             this.Controls.Add(this.gbServer);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
