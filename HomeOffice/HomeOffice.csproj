@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net8.0-windows10.0.17763.0</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
     <StartupObject>HomeOffice.Program</StartupObject>
     <ApplicationIcon>Icons\Home.ico</ApplicationIcon>
@@ -10,6 +10,7 @@
     <Version>1.7.0</Version>
     <RepositoryUrl>https://github.com/JoergSalzmann/HomeOffice</RepositoryUrl>
     <RepositoryType>Public</RepositoryType>
+    <SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
   </PropertyGroup>
 
   <ItemGroup>
