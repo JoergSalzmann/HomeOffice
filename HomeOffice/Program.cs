@@ -17,7 +17,7 @@ namespace HomeOffice
             Application.SetHighDpiMode(HighDpiMode.DpiUnaware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainView());
+            Application.Run(new MainView()); 
         }
     }
 }
